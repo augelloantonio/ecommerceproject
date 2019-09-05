@@ -30,17 +30,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django_forms_bootstrap',
-    'accounts',
-    'products',
-    'cart',
-    'checkout',
+    'django.contrib.admin', 'django.contrib.auth',
+    'django.contrib.contenttypes', 'django.contrib.sessions',
+    'django.contrib.messages', 'django.contrib.staticfiles',
+    'django_forms_bootstrap', 'accounts', 'products', 'cart', 'checkout',
     'storages'
 ]
 
@@ -79,7 +72,9 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 if "DATABASE_URL" in os.environ:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 else:
     print("Database URL not found. Using SQLite instead")
     DATABASES = {
@@ -133,8 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 AWS_S3_OBJECT_PARAMETERS = {
-    'Expires':'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl':'max-age=9469000'
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=9469000'
 }
 
 AWS_STORAGE_BUCKET_NAME = 'antonio-ecommerce'
@@ -160,4 +155,3 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGGE_STORAGE = 'django.contrib.messages.storage.session.Sessionstorage'
-
