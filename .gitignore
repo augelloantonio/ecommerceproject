@@ -3,4 +3,9 @@
 .venv
 __pycache__
 venv/
+env.py
+static/
+media/
+.gitignore
+*.png
 env/
