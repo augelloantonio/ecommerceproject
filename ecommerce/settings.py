@@ -70,11 +70,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
 if "DATABASE_URL" in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     print("Database URL not found. Using SQLite instead")
     DATABASES = {
